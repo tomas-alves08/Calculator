@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Montserrat:wght@500&family=Roboto+Slab:wght@500&display=swap");
+
+* {
+  /* border: solid red 1px !important; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 375px) {
+  body {
+    background-color: rgb(229, 226, 226);
+  }
+
+  .calculator {
+    width: 85%;
+    margin: 50px auto;
+    padding-bottom: 20px;
+    background-color: hsl(222, 26%, 31%);
+  }
+
+  .title {
+    width: 100%;
+    margin: 20px auto 20px;
+    border-radius: 10px;
+    height: 60px;
+    /* text-align: right; */
+    padding: 25px 20px 10px;
+    font-size: xx-large;
+    font-weight: 400;
+    color: white;
+  }
+
+  .screen {
+    width: 90%;
+    margin: 20px auto 20px;
+    background-color: hsl(224, 36%, 15%);
+    border-radius: 10px;
+    height: 60px;
+    text-align: right;
+    padding: 10px 20px 10px;
+    font-size: xx-large;
+    font-weight: 500;
+    color: white;
+  }
+
+  .buttons-area {
+    width: 90%;
+    margin: 20px auto 20px;
+    background-color: hsl(223, 31%, 20%);
+    border-radius: 10px;
+    height: auto;
+  }
+
+  .btn {
+    color: hsl(221, 14%, 31%);
+    background-color: hsl(45, 7%, 89%);
+    font-size: x-large;
+    font-weight: 600;
+    float: left;
+    padding: 15px;
+    border-radius: 15px;
+    border: solid 5px hsl(223, 31%, 20%);
+    /* box-shadow: 0 1px 3px hsl(224, 28%, 35%); */
+  }
+  .row {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .row:first-child {
+    padding-top: 15px;
+  }
+
+  .row:last-child {
+    padding-bottom: 15px;
+  }
+}
+
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.btn-reset {
+  background-color: hsl(225, 21%, 49%);
+  color: white;
+  font-size: large;
+  font-weight: 600;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.btn-del {
+  background-color: hsl(225, 21%, 49%);
+  color: white;
+  font-size: large;
+  font-weight: 600;
+  padding-left: 12px;
+  padding-top: 19px;
+  padding-bottom: 18px;
+}
+
+.btn-special-orange {
+  background-color: hsl(6, 63%, 50%);
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  padding-top: 12px;
+}

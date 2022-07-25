@@ -1,26 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Calculator app</title>
 
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="title">
+        <p>Calc-TS89</p>
+      </div>
+      <div class="screen">
+        <p class="display">0</p>
+      </div>
+      <div class="buttons-area">
+        <div class="row col-12">
+          <button class="btn col-3">7</button>
+          <button class="btn col-3">8</button>
+          <button class="btn col-3">9</button>
+          <button class="btn btn-del col-3">DEL</button>
+        </div>
+        <div class="row col-12">
+          <button class="btn col-3">4</button>
+          <button class="btn col-3">5</button>
+          <button class="btn col-3">6</button>
+          <button class="btn col-3">+</button>
+        </div>
+        <div class="row col-12">
+          <button class="btn col-3">1</button>
+          <button class="btn col-3">2</button>
+          <button class="btn col-3">3</button>
+          <button class="btn col-3">-</button>
+        </div>
+        <div class="row col-12">
+          <button class="btn col-3">.</button>
+          <button class="btn col-3">0</button>
+          <button class="btn col-3">/</button>
+          <button class="btn col-3">x</button>
+        </div>
+        <div class="row col-12">
+          <button class="btn btn-reset col-6">RESET</button>
+          <button class="btn btn-special-orange col-6">=</button>
+        </div>
+      </div>
+    </div>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Tomas Alves de Souza</a>.
+    </div>
+  </body>
 </html>
