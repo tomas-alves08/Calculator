@@ -29,22 +29,19 @@ let chosenNumber1 = "";
 let chosenNumber2 = "";
 let calcResult = "";
 
-// 1. Create a sum function
+// <-- FUNCTIONS --> //
 const sum = (num1, num2) => {
   return num1 + num2;
 };
 
-// 2. Create a subtraction function
 const subtract = (num1, num2) => {
   return num1 - num2;
 };
 
-// 3. Create a multiply function
 const multiply = (num1, num2) => {
   return num1 * num2;
 };
 
-// 4. Create a division function
 const divide = (num1, num2) => {
   return num1 / num2;
 };
@@ -80,14 +77,20 @@ const resetConditions = () => {
   }
 };
 
+const joinChosenNumbers = () => {
+  chosenNumber1 = Number(num1.join(""));
+  chosenNumber2 = Number(num2.join(""));
+};
+
+// <-- CALCULATOR FUNCTIONALITY --> //
 document.querySelector(".buttons-area").addEventListener("click", (e) => {
   let event = e.target.value;
   let num = [];
-  let chosenNumber = 0;
   clickSound.play();
   event === "reset" && resetConditions();
   event === "enter" && enter();
 
+  // ENTER FUNCTIONALITY
   if (event === "enter") {
     enter(chosenNumber1, chosenNumber2);
     resetConditions();
@@ -98,6 +101,8 @@ document.querySelector(".buttons-area").addEventListener("click", (e) => {
     event === "divide"
   ) {
     arithmeticFunctionVar = event;
+
+    // GIVING COLORS TO BUTTONS
     for (let i = 0; i < arithmeticButtons.length; i++) {
       if (arithmeticButtons[i].value === event) {
         document.getElementById(
@@ -109,71 +114,26 @@ document.querySelector(".buttons-area").addEventListener("click", (e) => {
         ).style.backgroundColor = "hsl(45, 7%, 89%)";
       }
     }
-
-    console.log(arithmeticFunctionVar);
   } else {
     arithmeticFunctionVar === "" ? (num = num1) : (num = num2);
-    chosenNumber1 = Number(num1.join(""));
-    chosenNumber2 = Number(num2.join(""));
+    joinChosenNumbers();
 
+    // DELETE FUNCTIONALITY
     if (event === "delete") {
       deleteValue(num);
-      chosenNumber1 = Number(num1.join(""));
-      chosenNumber2 = Number(num2.join(""));
+      joinChosenNumbers();
       arithmeticFunctionVar === ""
         ? (display.innerHTML = chosenNumber1)
         : (display.innerHTML = chosenNumber2);
-      console.log(
-        event,
-        num1,
-        chosenNumber1,
-        num2,
-        chosenNumber2,
-        typeof chosenNumber
-      );
     } else {
+      // DISPLAY FUNCTIONALITY
       num.push(event);
-      chosenNumber1 = Number(num1.join(""));
-      chosenNumber2 = Number(num2.join(""));
+      joinChosenNumbers();
 
-      document.querySelector(".display").innerHTML =
+      display.innerHTML =
         arithmeticFunctionVar === "" ? chosenNumber1 : chosenNumber2;
 
       if (display.innerHTML === "0" && event === ".") display.innerHTML = "0.";
-
-      console.log(
-        event,
-        num1,
-        chosenNumber1,
-        num2,
-        chosenNumber2,
-        typeof chosenNumber
-      );
     }
   }
 });
-
-// INCLUDE SOUND OF CLICK
-
-// 5. Create a delete function
-// 5.1 Create a function which deletes just the last number entered and
-//     which does not change if there is already a number saved
-//     previously
-
-// 6. Create a reset function
-// 6.1 Create a function which reset all the three variables for number
-//     1, number 2 and arithmetic function variable
-
-// 7. Create a enter function
-// 7.1 Create a function that calls a function which will use both
-//     saved number variables and the arithmetic function variable
-//     as parameters
-
-// 8. Put all functions together
-// 8.1 Make all the arithmetic functions save the first number when
-//     they are clicked in a variable
-// 8.2 Once arithmetic function is clicked it will be saved in a
-//     variable
-// 8.3 Second number will be saved in a third variable
-// 8.4 Enter button will call a function based on these 3 variables
-//     as inputs
