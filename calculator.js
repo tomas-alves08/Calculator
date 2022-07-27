@@ -59,7 +59,6 @@ const enter = (number1, number2) => {
   } else if (arithmeticFunctionVar === "divide") {
     calcResult = divide(number1, number2);
   }
-  calcResult = calcResult;
   display.innerHTML = calcResult;
 };
 
@@ -93,8 +92,13 @@ document.querySelector(".buttons-area").addEventListener("click", (e) => {
 
   // ENTER FUNCTIONALITY
   if (event === "enter") {
-    enter(chosenNumber1, chosenNumber2);
-    resetConditions();
+    if (chosenNumber2 === 0 && arithmeticFunctionVar === "divide") {
+      alert("Impossible to calculate, denominator cannot be 0!");
+      resetConditions();
+    } else {
+      enter(chosenNumber1, chosenNumber2);
+      resetConditions();
+    }
   } else if (event === "reset") {
     resetConditions();
   } else if (
@@ -135,9 +139,6 @@ document.querySelector(".buttons-area").addEventListener("click", (e) => {
 
       display.innerHTML =
         arithmeticFunctionVar === "" ? chosenNumber1 : chosenNumber2;
-
-      console.log(chosenNumber1);
-      console.log(chosenNumber2);
 
       if (display.innerHTML === "0" && event === ".") display.innerHTML = "0.";
     }
