@@ -28,6 +28,7 @@ let arithmeticFunctionVar = "";
 let chosenNumber1 = "";
 let chosenNumber2 = "";
 let calcResult = "";
+let saveCalcResults = "";
 
 // <-- FUNCTIONS --> //
 const sum = (num1, num2) => {
@@ -58,6 +59,7 @@ const enter = (number1, number2) => {
   } else if (arithmeticFunctionVar === "divide") {
     calcResult = divide(number1, number2);
   }
+  calcResult = calcResult;
   display.innerHTML = calcResult;
 };
 
@@ -67,9 +69,10 @@ const resetConditions = () => {
   arithmeticFunctionVar = "";
   chosenNumber1 = "";
   chosenNumber2 = "";
-  calcResult === ""
-    ? (display.innerHTML = "0")
-    : (display.innerHTML = calcResult);
+
+  calcResult === "" ? (saveCalcResults = 0) : (saveCalcResults = calcResult);
+  display.innerHTML = saveCalcResults;
+  calcResult = "";
 
   for (let i = 0; i < arithmeticButtons.length; i++) {
     document.getElementById(arithmeticButtons[i].value).style.backgroundColor =
@@ -87,12 +90,12 @@ document.querySelector(".buttons-area").addEventListener("click", (e) => {
   let event = e.target.value;
   let num = [];
   clickSound.play();
-  event === "reset" && resetConditions();
-  event === "enter" && enter();
 
   // ENTER FUNCTIONALITY
   if (event === "enter") {
     enter(chosenNumber1, chosenNumber2);
+    resetConditions();
+  } else if (event === "reset") {
     resetConditions();
   } else if (
     event === "sum" ||
@@ -132,6 +135,9 @@ document.querySelector(".buttons-area").addEventListener("click", (e) => {
 
       display.innerHTML =
         arithmeticFunctionVar === "" ? chosenNumber1 : chosenNumber2;
+
+      console.log(chosenNumber1);
+      console.log(chosenNumber2);
 
       if (display.innerHTML === "0" && event === ".") display.innerHTML = "0.";
     }
